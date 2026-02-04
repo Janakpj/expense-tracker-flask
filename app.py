@@ -46,7 +46,10 @@ def init_db():
     cur.close()
     conn.close()
 
-init_db()
+@app.before_first_request
+def setup_database():
+    init_db()
+
 
 # ---------------- HOME ----------------
 @app.route("/")
