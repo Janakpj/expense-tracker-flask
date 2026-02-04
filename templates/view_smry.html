@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Summary</title>
+</head>
+<body bgcolor="Black" style="color: blue;">
+<center>
+
+    <h1> SUMMARY </h1>
+
+    <form method="post" action="/view_smry">
+        <table>
+            <tr>
+                <td>
+                    <input type="month" name="selected_month" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit">View Summary</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <hr>
+
+    {% if income is not none %}
+    <h3>Total Income : {{ income }}</h3>
+    <h3>Total Expense : {{ expense }}</h3>
+    <h3>Balance : {{ balance }}</h3>
+{% endif %}
+
+
+</center>
+</body>
+</html>

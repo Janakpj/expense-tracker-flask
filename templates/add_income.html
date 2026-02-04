@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add_Income</title>
+</head>
+<body bgcolor="bluegreen" style="color: Orange;">
+<!---------------ADD INCOME------------------->
+<center>
+   <!-- 🔹 FLASH MESSAGE -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <p class="{{ category }}">{{ message }}</p>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    <form method="POST">
+        <table>
+            <h2>Add Income</h2>
+            <tr>
+                <td>Date</td> <td> <input type="date" name="fin_date" required> </td>
+            </tr>
+            <tr>
+                <td>Income</td> <td> <input type="number" name="income" placeholder="Enter Your Income" required> </td>
+            </tr>
+            <tr>
+                <td>Details</td> <td> <input type="text" name="extra" placeholder="Additional Details if any" > </td>
+            </tr>
+            <tr>
+                <td> </td><td> <input type="submit" value="Add Income">  <input type="reset"></td>
+            </tr>
+        </table>
+    </form>
+
+</center>
+</body>
+</html>
