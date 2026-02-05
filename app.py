@@ -45,8 +45,7 @@ def init_db():
     cur.close()
     conn.close()
 
-@app.before_first_request
-def setup_database():
+with app.app_context():
     init_db()
 
 
@@ -166,4 +165,5 @@ def view_smry():
 # ---------------- RUN ----------------
 if __name__ == "__main__":
     app.run(debug=True)
+
 
